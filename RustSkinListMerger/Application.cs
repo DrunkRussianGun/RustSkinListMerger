@@ -50,6 +50,7 @@ static Dictionary<string, SkinDto> MergeSkins(string[] inputFileNames)
 		{
 			if (!mergedSkinsMap.TryGetValue(inputSkin.ItemShortName, out var mergedSkin))
 			{
+				inputSkin.SkinIds.Add(defaultSkinId);
 				mergedSkinsMap.Add(inputSkin.ItemShortName, inputSkin);
 				continue;
 			}
